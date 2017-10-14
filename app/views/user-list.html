@@ -1,23 +1,53 @@
 <div class="jumbotron">
-  <h1>User List</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <h1>User List</h1>  
 </div>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table">
+      <thead><tr><th>id</th><th>name</th><th>age</th><th>edit</th><th>delete</th></tr></thead>
+      <tbody>
+        <tr ng-repeat="obj in userList">
+          <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></td>
+          <td><input type="text" class="form-control" ng-model="obj.name"></td>
+          <td><input type="text" class="form-control" ng-model="obj.age"></td>
+          <td><button type="button" class="btn btn-warning btn-sm" ng-click="modifyUserInfo(obj.id,obj.name,obj.age)">Edit</button></td>
+          <td><button type="button" class="btn btn-danger btn-sm" ng-click="deleteUserInfo(obj.id)">Danger</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">User Info</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Id:</label>
+              {{userInfo.id}}
+            </div>
+            <div class="form-group">
+              <label for="user_name">Name:</label>
+              <input type="text" class="form-control" ng-model="userInfo.name" id="user_name">
+            </div>
+            <div class="form-group">
+              <label for="user_age">Age:</label>
+              <input type="text" class="form-control" ng-model="userInfo.age" id="user_age">
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-warning btn-sm" ng-click="modifyUserInfo(userInfo.id,userInfo.name,userInfo.age)" data-dismiss="modal">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm" ng-click="deleteUserInfo(userInfo.id)" data-dismiss="modal">Danger</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -8,25 +8,25 @@
  * Controller of the angularJsexamApp
  */
 angular.module('angularJsexamApp')
-  .factory('Data',['$http', '$q', 
+  .factory('Data',['$http','$q', 
   	function($http, $q) {
   		return {
-  			getdata : function(url) {
+  			getData : function(url) {
   				var defered = $q.defer();
   				$http({
   					method:'GET', url:url,
   					headers:{
   						'Content-Type':
-  						'application.text;charset=utf-8'
+  						'application/text;charset=utf-8'
   					}
   				}).then(function(response){
   					defered.resolve(response);
-  				}, function(reponse) {
+  				}, function(response) {
   					window.alert(JSON.stringify(response));
   				});
   				return defered.promise;
   			},
-  			setdata : function(url, data) {
+  			setData : function(url, data) {
   				var defered = $q.defer();
   				$http({
   					method:'POST', url:url, data:data,
@@ -34,14 +34,14 @@ angular.module('angularJsexamApp')
   						'Content-Type':
   						'application/x-www-form-urlencoded'
   					}
-  				}).then(function(response) {
+  				}).then(function(response){
   					defered.resolve(response);
-  				}, function(response) {
+  				}, function(response){
   					defered.resolve(response);
   				});
   				return defered.promise;
   			},
-  			modifydata : function(url, data) {
+  			modifyData : function(url, data) {
   				var defered = $q.defer();
   				$http({
   					method:'PUT', url:url, data:data,
@@ -49,14 +49,14 @@ angular.module('angularJsexamApp')
   						'Content-Type':
   						'application/x-www-form-urlencoded'
   					}
-  				}).then(function(response) {
+  				}).then(function(response){
   					defered.resolve(response);
-  				}, function(response) {
+  				}, function(response){
   					defered.resolve(response);
   				});
   				return defered.promise;
   			},
-  			deletedata : function(url, data) {
+  			deleteData : function(url, data) {
   				var defered = $q.defer();
   				$http({
   					method:'DELETE', url:url, data:data,
@@ -64,9 +64,9 @@ angular.module('angularJsexamApp')
   						'Content-Type':
   						'application/x-www-form-urlencoded'
   					}
-  				}).then(function(response) {
+  				}).then(function(response){
   					defered.resolve(response);
-  				}, function(response) {
+  				}, function(response){
   					defered.resolve(response);
   				});
   				return defered.promise;
