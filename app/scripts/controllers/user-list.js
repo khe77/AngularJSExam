@@ -23,7 +23,7 @@ angular.module('angularJsexamApp')
     $scope.userList = [];
     $scope.requestUserList = function() {
     	var dataPromise = Data.getData(
-    		'http://127.0.0.1:52273/user');
+    		'http://172.16.2.5:52273/user');
     	dataPromise.then(function(results) {
     		$scope.userList = results.data;
     	},function(reason){},function(update){});
@@ -31,7 +31,7 @@ angular.module('angularJsexamApp')
 
     $scope.deleteUserInfo = function(id) {
     	var dataPromise = Data.deleteData(
-    		'http://127.0.0.1:52273/user/'+id, '');
+    		'http://172.16.2.5:52273/user/'+id, '');
     	dataPromise.then(function(results) {
     		$scope.requestUserList();
     	},function(reason){},function(update){});
@@ -39,7 +39,7 @@ angular.module('angularJsexamApp')
 
     $scope.modifyUserInfo = function(id, name, age) {
     	var dataPromise = Data.modifyData(
-    		'http://127.0.0.1:52273/user/'+id, 
+    		'http://172.16.2.5:52273/user/'+id, 
     		'&name='+name+'&age='+age);
     	dataPromise.then(function(results) {
     		$scope.requestUserList();
@@ -48,7 +48,7 @@ angular.module('angularJsexamApp')
 
     $scope.requestUserInfo = function(id) {
     	var dataPromise = Data.getData(
-    		'http://127.0.0.1:52273/user/'+id);
+    		'http://172.16.2.5:52273/user/'+id);
     	dataPromise.then(function(results) {
     		$scope.user_id = results.data.id;
     		$scope.user_name = results.data.name;
@@ -59,7 +59,7 @@ angular.module('angularJsexamApp')
     $scope.userInfo = {};
     $scope.getUserInfo = function(id) {
     	var dataPromise = Data.getData(
-    		'http://127.0.0.1:52273/user/'+id);
+    		'http://172.16.2.5:52273/user/'+id);
     	dataPromise.then(function(results) {
     		$scope.userInfo = results.data;
     	},function(reason){},function(update){});
