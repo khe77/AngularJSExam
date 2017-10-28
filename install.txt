@@ -17,6 +17,15 @@ bower install
 grunt serve
 ----
 grunt build
-dist Æú´õÀÇ ÆÄÀÏ°ú Æú´õ¸¦ ¸ğµÎ º¹»ç
-À¥¼­¹öÀÇ wwwroot¿¡ ºÙ¿©³Ö±â
-À¥ºê¶ó¿ìÀú·Î Á¢¼Ó È®ÀÎ
+dist í´ë”ì˜ íŒŒì¼ê³¼ í´ë”ë¥¼ ëª¨ë‘ ë³µì‚¬
+ì›¹ì„œë²„ì˜ wwwrootì— ë¶™ì—¬ë„£ê¸°
+ì›¹ë¸Œë¼ìš°ì €ë¡œ ì ‘ì† í™•ì¸
+
+$ yo angular:controller login
+$ yo angular:controller signup
+$ yo angular:controller user-list
+$ yo angular:controller user-detail
+$ yo angular:controller user-withdraw
+
+$ yo angular:service session-info
+$ yo angular:service session-service

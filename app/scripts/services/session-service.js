@@ -8,10 +8,14 @@
  * Service in the angularJsexamApp.
  */
 angular.module('angularJsexamApp')
-  .service('sessionService', [ 'Data', 'sessionInfo', function (Data, sessionInfo) {
+  .service('sessionService', 
+  	[ 'Data','sessionInfo',  function (Data, sessionInfo) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     this.login = function(params, callback) {
-    	var dataPromise = Data.setData('http://172.16.2.5:52273/user/login', '&user_id='+params.user_id+"&password"+params.password);
+    	var dataPromise = Data.setData(
+    		'http://172.16.1.248:52273/user/login',
+    		//'http://10.0.2.2:52273/user/login',
+    		'&user_id='+params.user_id+"&password="+params.password);
     	dataPromise.then(function(result) {
     		if (result.data.result == true) {
     			result = JSON.stringify(result);
