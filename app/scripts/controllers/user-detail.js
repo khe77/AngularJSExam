@@ -9,15 +9,16 @@
  */
 angular.module('angularJsexamApp')
   .controller('UserDetailCtrl', 
-+  	[ "Data", "$scope", "$state", "$stateParams",
-+  	function (Data, $scope, $state, $stateParams) {
+  	[ "Data", "$scope", "$state", "$stateParams",
+  	function (Data, $scope, $state, $stateParams) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-    
+
+    //페이지가 로딩되었을 때 호출
     $scope.$on('$viewContentLoaded', function() {
-		window.alert(JSON.stringify($stateParams));
-	});
-  });
+    	window.alert(JSON.stringify($stateParams));
+    });
+  }]);
