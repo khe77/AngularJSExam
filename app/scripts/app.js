@@ -45,7 +45,10 @@ angular
       .state('user-detail',{
         url:'/user/detail',
         templateUrl:'views/user-detail.html',
-        controller:'UserDetailCtrl'
+        controller:'UserDetailCtrl',
+        params:{
+          id:null
+        }
       })
       .state('user-withdraw',{
         url:'/user/withdraw',
