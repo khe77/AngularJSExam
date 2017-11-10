@@ -15,6 +15,9 @@ y
 npm install
 bower install
 grunt serve
+bower install angular-bootstrap --save
+bower install angular-ui-router --save
+
 ----
 grunt build
 dist 폴더의 파일과 폴더를 모두 복사
