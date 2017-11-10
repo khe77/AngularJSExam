@@ -22,9 +22,9 @@ angular.module('angularJsexamApp')
     	$state.go('login');
     }
     $scope.submitLogin = function() {
-    	sessionService.login($scope.login, function(res) {
-    		$state.go('main');
-    	});
+    	//sessionService.login($scope.login, function(res) {
+    	//	$state.go('main');
+    	//});
     }
     $scope.isUserSignedIn = function() {
     	return sessionInfo.isUserSignedIn();
